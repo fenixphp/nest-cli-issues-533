@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/04-monorepo-apps-libs/src",
+  "monorepo": true,
+  "root": "apps/04-monorepo-apps-libs",
+  "compilerOptions": {
+    "webpack": false,
+    "tsConfigPath": "apps/04-monorepo-apps-libs/tsconfig.app.json"
+  },
+  "projects": {
+    "04-monorepo-apps-libs": {
+      "type": "application",
+      "root": "apps/04-monorepo-apps-libs",
+      "entryFile": "main",
+      "sourceRoot": "apps/04-monorepo-apps-libs/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/04-monorepo-apps-libs/tsconfig.app.json"
+      }
+    },
+    "my-app": {
+      "type": "application",
+      "root": "apps/my-app",
+      "entryFile": "main",
+      "sourceRoot": "apps/my-app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/my-app/tsconfig.app.json"
+      }
+    },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    }
+  }
+}
